@@ -1,0 +1,54 @@
+@use "../base/variables.scss" as *;
+
+.radio-list__text {
+  display: inline-block;
+  padding: 10px 31px 10px 62px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  color: $secondary-color;
+}
+
+.radio-list__control {
+  position: relative;
+  max-width: 280px;
+  display: flex;
+  cursor: pointer;
+}
+
+.radio-list__field + .radio-list__control-outline::before {
+  content: "";
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  top: 0;
+  left: 0;
+}
+
+.radio-list__field:checked + .radio-list__control-outline::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 15px;
+  left: 15px;
+  border-radius: 50%;
+  background-color: $additional-color;
+}
+
+.radio-list__field:active + .radio-list__control-outline::after {
+  background-color: #a5a5a5;
+}
+
+.radio-list__field:disabled ~ .radio-list__text,
+.radio-list__field:disabled ~ .radio-list__control-outline {
+  opacity: 0.2;
+}
+
+.radio-list__field:focus-visible + .radio-list__control-outline {
+  outline: 2px solid #000000;
+}
+
+.radio-list__field + .radio-list__control-outline {
+  border-radius: 50%;
+}

@@ -1,0 +1,129 @@
+@use "../base/variables.scss" as *;
+
+.modal {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+
+  &--success {
+    .modal__failure {
+      display: none;
+    }
+
+    .modal__success {
+      display: block;
+    }
+  }
+}
+
+.modal__control {
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
+
+.modal__failure {
+  width: 320px;
+  padding: 45px 41px 35px 41px;
+  margin: auto;
+  box-shadow: none;
+
+  @media (min-width: $tablet-width) {
+    width: 400px;
+    padding: 50px 47px;
+  }
+}
+
+.modal__success {
+  display: none;
+  width: 320px;
+  margin: auto;
+  padding: 39px 20px 20px 20px;
+  box-shadow: none;
+  background: linear-gradient(to bottom, #ffffff 70%, #f2f2f2 70%);
+
+  @media (min-width: $tablet-width) {
+    width: 640px;
+    padding: 53px 91px 47px 91px;
+    background: linear-gradient(to bottom, #ffffff 58%, #f2f2f2 58%);
+  }
+
+  .modal__title {
+    @media (min-width: $tablet-width) {
+      margin: 0 0 28px;
+      line-height: 26px;
+    }
+  }
+
+  .modal__close-button {
+    @media (min-width: $tablet-width) {
+      width: 100%;
+    }
+  }
+}
+
+.modal__title {
+  margin: 0 0 24px 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: $secondary-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+.modal__text {
+  margin: 0 0 28px 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: $additional-color;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 47px;
+  }
+
+  &--success {
+    max-width: 244px;
+    margin: 0 auto 69px auto;
+
+    @media (min-width: $tablet-width) {
+      max-width: 444px;
+      margin: 0 auto 95px auto;
+    }
+  }
+}
+
+.modal__close-button {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  min-width: 180px;
+  padding: 17px 76px 15px 76px;
+  text-align: center;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  @media (min-width: $tablet-width) {
+    min-width: 272px;
+    font-size: 21px;
+  }
+}

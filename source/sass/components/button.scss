@@ -1,0 +1,22 @@
+@use "../base/variables.scss" as *;
+
+.button {
+  border: none;
+  cursor: pointer;
+  background-color: $main-color;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #669ec0;
+  }
+
+  &:active {
+    background-color: #5496bd;
+    color: #87b4d1;
+  }
+
+  &--disabled {
+    pointer-events: none;
+    background-color: #e5e5e5;
+  }
+}

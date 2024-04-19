@@ -1,0 +1,65 @@
+@use "../base/variables.scss" as *;
+
+.hero {
+  background-color: rgba(131, 179, 211, 0.5);
+  background-image: url("../images/decorative/hero-divider-mobile.svg"), url("../images/content/hero-background.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom, center;
+  background-size: 100% 57px, cover;
+  padding: 90px 19px 85px 19px;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../images/decorative/hero-divider-mobile.svg"), url("../images/content/hero-background@2x.jpg");
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 78px 19px 90px 19px;
+    background-image: url("../images/decorative/hero-divider-tablet.svg"), url("../images/content/hero-background-tablet.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../images/decorative/hero-divider-tablet.svg"), url("../images/content/hero-background-tablet@2x.jpg");
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    background-image: url("../images/decorative/hero-divider-desktop.svg"), url("../images/content/hero-background-desktop.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../images/decorative/hero-divider-desktop.svg"), url("../images/content/hero-background-desktop@2x.jpg");
+    }
+  }
+
+  &--additional {
+    padding: 52px 19px 68px;
+    background-image: url("../images/decorative/hero-divider-mobile.svg"), url("../images/content/hero-background-additional.jpg");
+    background-position: bottom, bottom;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../images/decorative/hero-divider-mobile.svg"), url("../images/content/hero-background-additional@2x.jpg");
+    }
+
+    @media (min-width: $tablet-width) {
+      padding: 95px 19px 118px;
+      background-image: url("../images/decorative/hero-divider-tablet.svg"), url("../images/content/hero-background-additional-tablet.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../images/decorative/hero-divider-tablet.svg"), url("../images/content/hero-background-additional-tablet@2x.jpg");
+      }
+    }
+
+    @media (min-width: $desktop-width) {
+      padding: 103px 19px 118px;
+      background-image: url("../images/decorative/hero-divider-desktop.svg"), url("../images/content/hero-background-additional-desktop.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../images/decorative/hero-divider-desktop.svg"), url("../images/content/hero-background-additional-desktop@2x.jpg");
+      }
+    }
+  }
+}
+
+.hero__img {
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}

@@ -1,0 +1,38 @@
+@use "../base/variables.scss" as *;
+
+.sedona-description {
+  padding: 33px 18px 16px 18px;
+
+  @media (min-width: $tablet-width) {
+    padding: 48px 124px 54px 124px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 59px 358px 44px 358px;
+  }
+}
+
+.sedona-description__title {
+  margin: 0 0 35px 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: $secondary-color;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 30px 0;
+    font-size: 21px;
+  }
+}
+
+.sedona-description__text {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: $additional-color;
+}

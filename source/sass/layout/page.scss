@@ -1,0 +1,22 @@
+@use "../base/variables" as *;
+
+.page {
+  height: 100%;
+}
+
+.page__body {
+  height: 100%;
+  margin: 0;
+  background-color: #f2f2f2;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.page__map {
+  margin: 0 0 8px 0;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+  }
+}

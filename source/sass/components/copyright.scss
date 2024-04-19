@@ -1,0 +1,54 @@
+@use "../base/variables.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.copyright {
+  @include flex(row, normal, center);
+  position: relative;
+  margin: 0 auto;
+  max-width: 129px;
+  min-height: 35px;
+  padding: 0 41px 0 0;
+
+  @media (min-width: $tablet-width) {
+    align-self: center;
+    margin: 0;
+    justify-self: end;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 28px;
+    height: 35px;
+    mask-image: url("../images/stack.svg#html-academy");
+    background-color: $additional-color;
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    color: $main-color;
+
+    &::after {
+      background-color: $main-color;
+    }
+  }
+
+  &:active {
+    color: #b3b3b3;
+
+    &::after {
+      background-color: #b3b3b3;
+    }
+  }
+}
+
+.copyright__link {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: $secondary-color;
+  text-decoration: none;
+}

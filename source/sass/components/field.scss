@@ -1,0 +1,40 @@
+.field {
+  width: 100%;
+  border: none;
+  background-color: #f2f2f2;
+  padding: 16px;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+
+  &:active,
+  &:focus {
+    background-color: #ffffff;
+    outline: 4px solid #e5e5e5;
+    outline-offset: -4px;
+    border: none;
+  }
+
+  &::placeholder {
+    font-family: "PT Sans", "Arial", sans-serif;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    opacity: 1;
+  }
+
+  &--error {
+    outline: 4px solid #e80a0a;
+    outline-offset: -4px;
+  }
+
+  &--phone {
+    background-image: url("../images/stack.svg#phone");
+  }
+
+  &--email {
+    background-image: url("../images/stack.svg#mail");
+  }
+}

@@ -1,0 +1,74 @@
+@use "../base/variables.scss" as *;
+
+.social {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 48px);
+  gap: 6px;
+  justify-content: center;
+}
+
+.social__link {
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-color: $main-color;
+
+  &--vkontakte {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      mask-image: url("../images/stack.svg#vk");
+      background-color: #ffffff;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--telegram {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      mask-image: url("../images/stack.svg#telegram");
+      background-color: #ffffff;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--youtube {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      mask-image: url("../images/stack.svg#youtube");
+      background-color: #ffffff;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &:hover {
+    background-color: #669ec0;
+  }
+
+  &:active {
+    background-color: #5496bd;
+
+    &::before {
+      opacity: 0.3;
+    }
+  }
+}

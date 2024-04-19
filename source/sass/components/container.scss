@@ -1,0 +1,11 @@
+@use "../base/mixins.scss" as *;
+
+.container {
+  @include flex(column);
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
+}

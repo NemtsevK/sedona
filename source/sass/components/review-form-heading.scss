@@ -1,0 +1,42 @@
+@use "../base/variables.scss" as *;
+
+.review-form-heading {
+  padding: 36px 20px 28px 20px;
+
+  @media (min-width: $tablet-width) {
+    padding: 64px 166px 108px 166px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 115px 382px 68px 382px;
+  }
+}
+
+.review-form-heading__title {
+  margin: 0 0 24px 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: $secondary-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+    margin: 0 0 20px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 31px 0;
+  }
+}
+
+.review-form-heading__text {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: $additional-color;
+}

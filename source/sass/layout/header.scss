@@ -1,0 +1,50 @@
+@use "../base/variables.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.header__wrapper {
+  @include flex(row, flex-end, center);
+  flex-wrap: wrap;
+  min-height: 56px;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
+.header__logo-link {
+  display: block;
+  position: absolute;
+  width: 185px;
+  height: 96px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (min-width: $tablet-width) {
+    z-index: 2;
+  }
+
+  &:hover {
+    margin-top: 20px;
+    transition: linear 0.2s 0.2s;
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: $main-color;
+    }
+  }
+
+  &:active {
+    opacity: 0.75;
+  }
+}
+
+.header__logo-img {
+  object-fit: cover;
+}
