@@ -1,8 +1,6 @@
 /* Мобильная навигация */
-
-let nav = document.querySelector('.nav');
-let navToggle = document.querySelector('.nav__toggle');
-let navListWrapper = document.querySelector('.nav__list-wrapper');
+const nav = document.querySelector('.nav');
+const navToggle = document.querySelector('.nav__toggle');
 
 nav.classList.remove("nav--no-js");
 navToggle.classList.remove('nav__toggle--no-js');
@@ -20,10 +18,10 @@ navToggle.addEventListener('click', function () {
 /* Модальное окно */
 
 const modal = document.querySelector('.modal');
-const btn = document.querySelector('.review-form__send-review-button');
+const button = document.querySelector('.review-form__send-review-button');
 const closeBtn = Array.from(document.querySelectorAll('.modal__close-button'));
 
-btn.addEventListener('click', (event) => {
+button?.addEventListener('click', () => {
   modal.style.display = "flex";
 });
 

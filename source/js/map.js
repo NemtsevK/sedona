@@ -1,11 +1,10 @@
 /* Карта */
-let screenWidth = window.screen.width;
-let mapWrapper = document.querySelector('.map__wrapper');
-let mapImage = document.querySelector('.map__image');
-let center = [34.866849964021355,-111.76106949186402];
-let pinSize = [27, 27];
-let pinOffset = [-10, -20];
-let zoom = 7;
+const mapWrapper = document.querySelector('.map__wrapper');
+const mapImage = document.querySelector('.map__image');
+const center = [34.866849964021355, -111.76106949186402];
+const pinSize = [27, 27];
+const pinOffset = [-10, -20];
+const zoom = 7;
 
 mapWrapper.classList.remove('map__wrapper--no-js');
 mapImage.classList.remove('map__image--no-js');
