@@ -1,8 +1,9 @@
 {
   "name": "sedona",
-  "private": true,
-  "homepage": "https://nemtsev-k.github.io/sedona/",
+  "author": "Nemtsev Konstantin <nemtsevk@hotmail.com> (https://github.com/nemtsev-k)",
   "description": "Личный проект «Седона» от HTML Academy",
+  "homepage": "https://nemtsev-k.github.io/sedona/",
+  "private": true,
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.0",
     "autoprefixer": "10.4.0",

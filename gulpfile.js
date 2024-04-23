@@ -25,7 +25,7 @@ export const styles = () => {
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('build/css', {sourcemaps: '.'}))
     .pipe(browser.stream());
-}
+};
 
 const scripts = () => {
   return gulp.src('source/js/*.js')
@@ -33,7 +33,7 @@ const scripts = () => {
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('build/js'))
     .pipe(browser.stream());
-}
+};
 
 const html = () => {
   return gulp.src('source/*.html')
@@ -41,54 +41,53 @@ const html = () => {
     .pipe(replace('.js', '.min.js'))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('build'));
-}
+};
 
 const optimizeImages = () => {
   return gulp.src('source/images/**/*.{png,jpg}')
     .pipe(squoosh())
-    .pipe(gulp.dest('build/images'))
-}
+    .pipe(gulp.dest('build/images'));
+};
 
 const copyImages = () => {
   return gulp.src('source/images/**/*.{png,jpg}')
-    .pipe(gulp.dest('build/images'))
-}
+    .pipe(gulp.dest('build/images'));
+};
 
 const createWebp = () => {
   return gulp.src(['source/images/**/*.{png,jpg}', '!source/images/favicons/*.png'])
     .pipe(squoosh({
       webp: {}
     }))
-    .pipe(gulp.dest('build/images'))
-}
+    .pipe(gulp.dest('build/images'));
+};
 
-const optimizeSvg = () =>
-  gulp.src(['source/images/**/*.svg', '!source/images/icons/*.svg'])
+const optimizeSvg = () => {
+  return gulp.src(['source/images/**/*.svg', '!source/images/sprites/*.svg'])
     .pipe(svgo())
     .pipe(gulp.dest('build/images'));
+};
 
 const createStack = () => {
-  return gulp.src('source/images/icons/*.svg')
+  return gulp.src('source/images/sprites/*.svg')
     .pipe(svgo())
-    .pipe(stacksvg({output: 'stack.svg'}))
+    .pipe(stacksvg({output: 'sprite.svg'}))
     .pipe(gulp.dest('build/images'));
-}
+};
 
 const copy = (done) => {
   gulp.src([
-    'source/fonts/**/*.{woff2,woff}',
+    'source/fonts/**/*.woff2',
     'source/*.ico',
     'source/*.webmanifest',
   ], {
     base: 'source'
   })
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('build'));
   done();
-}
-
-const clean = () => {
-  return del('build');
 };
+
+const clean = () =>  del('build');
 
 const server = (done) => {
   browser.init({
@@ -100,18 +99,38 @@ const server = (done) => {
     ui: false,
   });
   done();
-}
+};
 
 const reload = (done) => {
   browser.reload();
   done();
-}
+};
 
 const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series(styles));
   gulp.watch('source/js/*.js', gulp.series(scripts));
   gulp.watch('source/*.html', gulp.series(html, reload));
-}
+  gulp.watch(
+    'source/images/**/*.{png,jpg}',
+    gulp.series(
+      copyImages,
+      createWebp,
+      styles,
+      html,
+      reload,
+    )
+  );
+  gulp.watch(
+    'source/images/**/*.svg',
+    gulp.series(
+      optimizeSvg,
+      createStack,
+      styles,
+      html,
+      reload,
+    )
+  );
+};
 
 export const build = gulp.series(
   clean,
@@ -139,8 +158,5 @@ export default gulp.series(
     createStack,
     createWebp
   ),
-  gulp.series(
-    server,
-    watcher
-  )
+  gulp.series(server,watcher)
 );
