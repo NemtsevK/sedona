@@ -15,8 +15,27 @@ import browser from 'browser-sync';
 import replace from 'gulp-replace';
 import {stacksvg} from 'gulp-stacksvg';
 
+const {src, dest, watch, series, parallel} = gulp;
+
+const SOURCE_ROOT = 'source';
+const BUILD_ROOT = 'build';
+const PATH_TO_MARKUP = `${SOURCE_ROOT}/*.html`;
+const PATH_TO_STYLE = `${SOURCE_ROOT}/sass/style.scss`;
+const PATH_TO_STYLES = `${SOURCE_ROOT}/sass/**/*.scss`;
+const PATH_TO_SCRIPTS = `${SOURCE_ROOT}/js/*.js`;
+const PATH_TO_RASTER = `${SOURCE_ROOT}/images/**/*.{png,jpg}`;
+const PATH_TO_SPRITES = `${SOURCE_ROOT}/images/sprites/*.svg`;
+const PATHS_TO_WEBP = [PATH_TO_RASTER, `!${SOURCE_ROOT}/images/favicons/*.png`];
+const PATHS_TO_VECTOR = `${SOURCE_ROOT}/images/**/*.svg`;
+const PATHS_TO_FILES = [
+  `${SOURCE_ROOT}/fonts/**/*.woff2`,
+  `${SOURCE_ROOT}/*.ico`,
+  `${SOURCE_ROOT}/*.webmanifest`,
+];
+const RESULT_TO_IMAGES = `${BUILD_ROOT}/images`;
+
 export const processStyles = () => {
-  return gulp.src('source/sass/style.scss', {sourcemaps: true})
+  return src(PATH_TO_STYLE, {sourcemaps: true})
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
@@ -24,80 +43,73 @@ export const processStyles = () => {
       csso()
     ]))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('build/css', {sourcemaps: '.'}))
+    .pipe(dest(`${BUILD_ROOT}/css`, {sourcemaps: '.'}))
     .pipe(browser.stream());
 };
 
 const processScripts = () => {
-  return gulp.src('source/js/*.js')
+  return src(PATH_TO_SCRIPTS)
     .pipe(terser())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('build/js'))
+    .pipe(dest(`${BUILD_ROOT}/js`))
     .pipe(browser.stream());
 };
 
 const processMarkup = () => {
-  return gulp.src('source/*.html')
+  return src(PATH_TO_MARKUP)
     .pipe(replace('.css', '.min.css'))
     .pipe(replace('.js', '.min.js'))
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('build'));
+    .pipe(dest(BUILD_ROOT));
 };
 
 const optimizeRaster = () => {
-  return gulp.src('source/images/**/*.{png,jpg}', {encoding: false})
+  return src(PATH_TO_RASTER, {encoding: false})
     .pipe(imagemin())
-    .pipe(gulp.dest('build/images'));
+    .pipe(dest(RESULT_TO_IMAGES));
 };
 
 const copyImages = () => {
-  return gulp.src('source/images/**/*.{png,jpg}', {encoding: false})
-    .pipe(gulp.dest('build/images'));
+  return src(PATH_TO_RASTER, {encoding: false})
+    .pipe(dest(RESULT_TO_IMAGES));
 };
 
 const createWebp = () => {
-  return gulp.src(['source/images/**/*.{png,jpg}', '!source/images/favicons/*.png'], {encoding: false})
+  return src(PATHS_TO_WEBP, {encoding: false})
     .pipe(webp())
-    .pipe(gulp.dest('build/images'));
+    .pipe(dest(RESULT_TO_IMAGES));
 };
 
 const optimizeVector = () => {
-  return gulp.src(['source/images/**/*.svg', '!source/images/sprites/*.svg'])
+  return src([PATHS_TO_VECTOR, `!${PATH_TO_SPRITES}`])
     .pipe(svgo())
-    .pipe(gulp.dest('build/images'));
+    .pipe(dest(RESULT_TO_IMAGES));
 };
 
 const createStack = () => {
-  return gulp.src('source/images/sprites/*.svg')
+  return src(PATH_TO_SPRITES)
     .pipe(svgo())
     .pipe(stacksvg({output: 'sprite.svg'}))
-    .pipe(gulp.dest('build/images'));
+    .pipe(dest(RESULT_TO_IMAGES));
 };
 
 const copyFiles = (done) => {
-  gulp.src([
-    'source/fonts/**/*.woff2',
-    'source/*.ico',
-    'source/*.webmanifest',
-  ], {
-    base: 'source'
-  })
-    .pipe(gulp.dest('build'));
+  src(PATHS_TO_FILES, {base: SOURCE_ROOT})
+    .pipe(dest(BUILD_ROOT));
   done();
 };
 
-const removeBuild = () => deleteAsync('build');
+const removeBuild = () => deleteAsync(BUILD_ROOT);
 
-const server = (done) => {
+const startServer = () => {
   browser.init({
     server: {
-      baseDir: 'build'
+      baseDir: BUILD_ROOT
     },
     cors: true,
     notify: false,
     ui: false,
   });
-  done();
 };
 
 const reloadServer = (done) => {
@@ -105,22 +117,22 @@ const reloadServer = (done) => {
   done();
 };
 
-const watcher = () => {
-  gulp.watch('source/sass/**/*.scss', gulp.series(processStyles));
-  gulp.watch('source/js/*.js', gulp.series(processScripts));
-  gulp.watch('source/*.html', gulp.series(processMarkup, reloadServer));
-  gulp.watch(
-    'source/images/**/*.{png,jpg}',
-    gulp.series(
+const startWatcher = () => {
+  watch(PATH_TO_STYLES, series(processStyles));
+  watch(PATH_TO_SCRIPTS, series(processScripts));
+  watch(PATH_TO_MARKUP, series(processMarkup, reloadServer));
+  watch(
+    PATH_TO_RASTER,
+    series(
       copyImages,
       createWebp,
       processMarkup,
       reloadServer,
     )
   );
-  gulp.watch(
-    'source/images/**/*.svg',
-    gulp.series(
+  watch(
+    PATHS_TO_VECTOR,
+    series(
       optimizeVector,
       createStack,
       processMarkup,
@@ -129,31 +141,36 @@ const watcher = () => {
   );
 };
 
-export const build = gulp.series(
-  removeBuild,
-  copyFiles,
-  optimizeRaster,
-  gulp.parallel(
-    processStyles,
-    processMarkup,
-    processScripts,
-    optimizeVector,
-    createStack,
-    createWebp
-  )
-);
+export const buildProd = (done) => {
+  series(
+    removeBuild,
+    copyFiles,
+    optimizeRaster,
+    parallel(
+      processStyles,
+      processMarkup,
+      processScripts,
+      optimizeVector,
+      createStack,
+      createWebp,
+    )
+  )(done);
+}
 
-export default gulp.series(
-  removeBuild,
-  copyFiles,
-  copyImages,
-  gulp.parallel(
-    processStyles,
-    processMarkup,
-    processScripts,
-    optimizeVector,
-    createStack,
-    createWebp
-  ),
-  gulp.series(server, watcher)
-);
+export const runDev = (done) => {
+  series(
+    removeBuild,
+    copyFiles,
+    copyImages,
+    parallel(
+      processStyles,
+      processMarkup,
+      processScripts,
+      optimizeVector,
+      createStack,
+      createWebp
+    ),
+    startServer,
+    startWatcher,
+  )(done);
+}
