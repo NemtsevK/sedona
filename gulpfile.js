@@ -45,18 +45,18 @@ const processMarkup = () => {
 };
 
 const optimizeRaster = () => {
-  return gulp.src('source/images/**/*.{png,jpg}')
+  return gulp.src('source/images/**/*.{png,jpg}', {encoding: false})
     .pipe(imagemin())
     .pipe(gulp.dest('build/images'));
 };
 
 const copyImages = () => {
-  return gulp.src('source/images/**/*.{png,jpg}')
+  return gulp.src('source/images/**/*.{png,jpg}', {encoding: false})
     .pipe(gulp.dest('build/images'));
 };
 
 const createWebp = () => {
-  return gulp.src(['source/images/**/*.{png,jpg}', '!source/images/favicons/*.png'])
+  return gulp.src(['source/images/**/*.{png,jpg}', '!source/images/favicons/*.png'], {encoding: false})
     .pipe(webp())
     .pipe(gulp.dest('build/images'));
 };
