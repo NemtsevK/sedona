@@ -4,6 +4,7 @@
   "description": "Личный проект «Седона» от HTML Academy",
   "homepage": "https://nemtsev-k.github.io/sedona/",
   "private": true,
+  "type": "module",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "3.0.0",
     "autoprefixer": "10.4.19",
@@ -51,10 +52,6 @@
     "source/sass/**/*.scss"
   ],
   "engines": {
-    "node": "20.13.1"
-  },
-  "type": "module",
-  "volta": {
     "node": "20.13.1"
   }
 }

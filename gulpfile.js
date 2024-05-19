@@ -150,7 +150,6 @@ const startServer = () => {
   );
 };
 
-
 export const buildProd = (done) => {
   series(
     removeBuild,
