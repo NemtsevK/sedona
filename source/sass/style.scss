@@ -6,6 +6,7 @@
 @use "base/reset-list.scss";
 @use "layout/page.scss";
 @use "layout/header.scss";
+@use "layout/main.scss";
 @use "layout/footer.scss";
 @use "components/container.scss";
 @use "components/hero.scss";
@@ -30,3 +31,4 @@
 @use "components/video-presentation.scss";
 @use "components/copyright.scss";
 @use "components/modal.scss";
+@use "components/not-found.scss";
