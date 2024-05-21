@@ -63,8 +63,6 @@ const processScripts = () => {
     .pipe(browser.stream());
 };
 
-
-
 const optimizeRaster = () => {
   return src(PATH_TO_RASTER, { encoding: false })
     .pipe(imagemin())
