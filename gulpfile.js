@@ -6,7 +6,6 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import csso from 'postcss-csso';
 import rename from 'gulp-rename';
-import htmlmin from 'gulp-htmlmin';
 import terser from 'gulp-terser';
 import webp from 'gulp-webp';
 import imagemin from 'gulp-imagemin';
@@ -14,12 +13,13 @@ import svgo from 'gulp-svgmin';
 import browser from 'browser-sync';
 import replace from 'gulp-replace';
 import { stacksvg } from 'gulp-stacksvg';
+import { nunjucksCompile } from 'gulp-nunjucks';
 
 const { src, dest, watch, series, parallel } = gulp;
 
 const SOURCE_ROOT = 'source';
 const BUILD_ROOT = 'build';
-const PATH_TO_MARKUP = `${SOURCE_ROOT}/*.html`;
+const PATH_TO_MARKUP = `${SOURCE_ROOT}/**/*.html`;
 const PATH_TO_STYLE = `${SOURCE_ROOT}/sass/style.scss`;
 const PATH_TO_STYLES = `${SOURCE_ROOT}/sass/**/*.scss`;
 const PATH_TO_SCRIPTS = `${SOURCE_ROOT}/js/*.js`;
@@ -33,6 +33,14 @@ const PATHS_TO_FILES = [
   `${SOURCE_ROOT}/*.webmanifest`,
 ];
 const RESULT_TO_IMAGES = `${BUILD_ROOT}/images`;
+
+const processMarkup = () => {
+  return src(PATH_TO_MARKUP)
+    .pipe(nunjucksCompile())
+    .pipe(replace('.css', '.min.css'))
+    .pipe(replace('.js', '.min.js'))
+    .pipe(dest(BUILD_ROOT));
+};
 
 export const processStyles = () => {
   return src(PATH_TO_STYLE, { sourcemaps: true })
@@ -55,13 +63,7 @@ const processScripts = () => {
     .pipe(browser.stream());
 };
 
-const processMarkup = () => {
-  return src(PATH_TO_MARKUP)
-    .pipe(replace('.css', '.min.css'))
-    .pipe(replace('.js', '.min.js'))
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(dest(BUILD_ROOT));
-};
+
 
 const optimizeRaster = () => {
   return src(PATH_TO_RASTER, { encoding: false })
