@@ -1,47 +1,15 @@
 <!DOCTYPE html>
+{% set currentPage = 'index' %}
 <html class="page" lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Седона: Главная</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="favicon.ico">
-  <link rel="icon" href="images/favicons/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="images/favicons/apple.png">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="preload" href="fonts/pt-sans-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="fonts/pt-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <title>Седона</title>
+  {% include 'templates/_head.html' %}
 </head>
 <body class="page__body">
 <div class="container">
-  <header class="header">
-    <div class="header__wrapper">
-      <a class="header__logo-link" href="index.html">
-        <img class="header__logo-img" src="images/brand/logo.svg" width="185" height="96" alt="Логотип городка Седона.">
-      </a>
-      <nav class="nav nav--closed nav--no-js">
-        <button class="nav__toggle nav__toggle--no-js" type="button" aria-label="Открыть меню навигации.">
-          <span class="nav__toggle-line"></span>
-        </button>
-        <div class="nav__list-wrapper">
-          <ul class="nav__list site-list reset-list">
-            <li class="site-list__item">
-              <a class="site-list__link site-list__link--current" href="index.html">Главная</a>
-            </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="catalog.html">Фото и видео</a>
-            </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="form.html">Форма отзыва</a>
-            </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="#">Html Academy</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
+  {% include 'templates/_header.html' %}
   <main class="main">
     <section class="page__hero hero">
       <h1 class="visually-hidden">Седона - городок в Аризоне</h1>
@@ -154,21 +122,7 @@
       </picture>
     </section>
   </main>
-  <footer class="footer">
-    <span class="footer__description-text">#VisitSedona</span>
-    <ul class="footer__social-list social reset-list">
-      <li class="social__item">
-        <a class="social__link social__link--vkontakte" href="#" aria-label="Наша группа ВКонтакте" target="_blank"></a>
-      </li>
-      <li class="social__item">
-        <a class="social__link social__link--telegram" href="#" aria-label="Наш канал в Телеграм" target="_blank"></a>
-      </li>
-      <li class="social__item">
-        <a class="social__link social__link--youtube" href="#" aria-label="Наш канал в YouTube" target="_blank"></a>
-      </li>
-    </ul>
-    <a class="footer__copyright-link copyright" href="https://htmlacademy.ru/intensive/adaptive" target="_blank" aria-label="Сайт HTML Академии">Разработано</a>
-  </footer>
+  {% include 'templates/_footer.html' %}
 </div>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=7588d1f7-5393-400e-bb93-5c54ef7b8d5c&lang=ru_RU"></script>
 <script src="js/map.js"></script>
