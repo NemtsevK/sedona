@@ -20,6 +20,7 @@ const { src, dest, watch, series, parallel } = gulp;
 const SOURCE_ROOT = 'source';
 const BUILD_ROOT = 'build';
 const PATH_TO_MARKUP = `${SOURCE_ROOT}/**/*.html`;
+const PATH_TO_TEMPLATES = `${SOURCE_ROOT}/templates/*.html`;
 const PATH_TO_STYLE = `${SOURCE_ROOT}/sass/style.scss`;
 const PATH_TO_STYLES = `${SOURCE_ROOT}/sass/**/*.scss`;
 const PATH_TO_SCRIPTS = `${SOURCE_ROOT}/js/*.js`;
@@ -35,7 +36,7 @@ const PATHS_TO_FILES = [
 const RESULT_TO_IMAGES = `${BUILD_ROOT}/images`;
 
 const processMarkup = () => {
-  return src(PATH_TO_MARKUP)
+  return src([PATH_TO_MARKUP, `!${PATH_TO_TEMPLATES}`])
     .pipe(nunjucksCompile())
     .pipe(replace('.css', '.min.css'))
     .pipe(replace('.js', '.min.js'))
