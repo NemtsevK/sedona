@@ -63,7 +63,7 @@
       position: static;
       grid-template-columns: auto;
       max-width: 256px;
-      padding: 41px 33px 43px 33px;
+      padding: 41px 33px 43px;
     }
 
     @media (min-width: $desktop-width) {
@@ -81,7 +81,7 @@
   background-size: 100% 37px;
 
   .advantages-list__title {
-    padding: 18px 0 0 0;
+    padding: 18px 0 0;
 
     @media (min-width: $tablet-width) {
       padding: 0;
@@ -97,25 +97,25 @@
   padding: 37px 18px;
 
   @media (min-width: $tablet-width) {
-    padding: 52px 33px 31px 33px;
+    padding: 52px 33px 31px;
     order: 2;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 52px 50px 51px 50px;
+    padding: 52px 50px 51px;
   }
 }
 
 .advantages-list__item-wrapper {
   @include flex(column, center, center);
-  padding: 54px 18px 40px 18px;
+  padding: 54px 18px 40px;
 
   @media (min-width: $tablet-width) {
-    padding: 52px 33px 31px 33px;
+    padding: 52px 33px 31px;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 52px 50px 51px 50px;
+    padding: 52px 50px 51px;
   }
 }
 
@@ -124,7 +124,7 @@
 }
 
 .advantages-list__title {
-  margin: 0 0 11px 0;
+  margin: 0 0 11px;
   text-align: center;
   font-size: 18px;
   font-weight: 700;
@@ -134,7 +134,7 @@
 
   @media (min-width: $tablet-width) {
     max-width: 155px;
-    margin: 0 auto 14px auto;
+    margin: 0 auto 14px;
     font-size: 21px;
   }
 }
@@ -144,7 +144,7 @@
   display: block;
   min-width: 46px;
   max-width: 46px;
-  margin: 0 auto 17px auto;
+  margin: 0 auto 17px;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
@@ -153,7 +153,7 @@
   color: #ffffff;
 
   @media (min-width: $tablet-width) {
-    margin: 0 auto 22px auto;
+    margin: 0 auto 22px;
   }
 
   &::before {

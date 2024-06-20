@@ -10,9 +10,8 @@
   padding: 0 41px 0 0;
 
   @media (min-width: $tablet-width) {
-    align-self: center;
+    place-self: center end;
     margin: 0;
-    justify-self: end;
   }
 
   &::after {

@@ -1,19 +1,19 @@
 @use "../base/variables.scss" as *;
 
 .review-form-heading {
-  padding: 36px 20px 28px 20px;
+  padding: 36px 20px 28px;
 
   @media (min-width: $tablet-width) {
-    padding: 64px 166px 108px 166px;
+    padding: 64px 166px 108px;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 115px 382px 68px 382px;
+    padding: 115px 382px 68px;
   }
 }
 
 .review-form-heading__title {
-  margin: 0 0 24px 0;
+  margin: 0 0 24px;
   text-align: center;
   font-size: 18px;
   font-weight: 700;
@@ -23,11 +23,11 @@
 
   @media (min-width: $tablet-width) {
     font-size: 30px;
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
   }
 
   @media (min-width: $desktop-width) {
-    margin: 0 0 31px 0;
+    margin: 0 0 31px;
   }
 }
 

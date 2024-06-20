@@ -31,7 +31,7 @@
 
 .modal__failure {
   width: 320px;
-  padding: 45px 41px 35px 41px;
+  padding: 45px 41px 35px;
   margin: auto;
   box-shadow: none;
 
@@ -45,13 +45,13 @@
   display: none;
   width: 320px;
   margin: auto;
-  padding: 39px 20px 20px 20px;
+  padding: 39px 20px 20px;
   box-shadow: none;
   background: linear-gradient(to bottom, #ffffff 70%, #f2f2f2 70%);
 
   @media (min-width: $tablet-width) {
     width: 640px;
-    padding: 53px 91px 47px 91px;
+    padding: 53px 91px 47px;
     background: linear-gradient(to bottom, #ffffff 58%, #f2f2f2 58%);
   }
 
@@ -70,7 +70,7 @@
 }
 
 .modal__title {
-  margin: 0 0 24px 0;
+  margin: 0 0 24px;
   text-align: center;
   font-size: 18px;
   font-weight: 700;
@@ -85,7 +85,7 @@
 }
 
 .modal__text {
-  margin: 0 0 28px 0;
+  margin: 0 0 28px;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
@@ -99,11 +99,11 @@
 
   &--success {
     max-width: 244px;
-    margin: 0 auto 69px auto;
+    margin: 0 auto 69px;
 
     @media (min-width: $tablet-width) {
       max-width: 444px;
-      margin: 0 auto 95px auto;
+      margin: 0 auto 95px;
     }
   }
 }
@@ -113,7 +113,7 @@
   margin: 0 auto;
   display: block;
   min-width: 180px;
-  padding: 17px 76px 15px 76px;
+  padding: 17px 76px 15px;
   text-align: center;
   font-family: "PT Sans", "Arial", sans-serif;
   font-size: 18px;

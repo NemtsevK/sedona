@@ -3,7 +3,7 @@
 
 .review-form {
   position: relative;
-  padding: 24px 20px 23px 20px;
+  padding: 24px 20px 23px;
 
   &::before {
     content: "";
@@ -21,11 +21,11 @@
 
   @media (min-width: $tablet-width) {
     position: static;
-    padding: 0 60px 77px 60px;
+    padding: 0 60px 77px;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 0 120px 77px 120px;
+    padding: 0 120px 77px;
   }
 }
 
@@ -35,7 +35,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 57px;
-    margin: 0 0 63px 0;
+    margin: 0 0 63px;
 
     &::before {
       content: "";
@@ -50,14 +50,14 @@
 
   @media (min-width: $desktop-width) {
     gap: 99px;
-    margin: 0 0 71px 0;
+    margin: 0 0 71px;
   }
 }
 
 .review-form__introduce {
   position: relative;
   margin: 0;
-  padding: 0 0 39px 0;
+  padding: 0 0 39px;
   border: none;
 
   &::after {
@@ -82,7 +82,7 @@
 }
 
 .review-form__title {
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
   color: $secondary-color;
   text-align: center;
   font-size: 18px;
@@ -91,7 +91,7 @@
   text-transform: uppercase;
 
   @media (min-width: $tablet-width) {
-    margin: 0 0 27px 0;
+    margin: 0 0 27px;
     font-size: 21px;
   }
 }
@@ -124,7 +124,7 @@
 .review-form__contact-info {
   position: relative;
   margin: 0;
-  padding: 0 0 34px 0;
+  padding: 0 0 34px;
   border: none;
 
   &::after {
@@ -149,8 +149,8 @@
 }
 
 .review-form__contact-info-title {
-  margin: 0 0 20px 0;
-  padding: 24px 0 0 0;
+  margin: 0 0 20px;
+  padding: 24px 0 0;
   text-align: center;
   font-size: 18px;
   font-weight: 700;
@@ -159,7 +159,7 @@
   color: $secondary-color;
 
   @media (min-width: $tablet-width) {
-    margin: 0 0 27px 0;
+    margin: 0 0 27px;
     font-size: 21px;
     padding: 0;
   }
@@ -168,7 +168,7 @@
 .review-form__list-wrapper {
   position: relative;
   margin: 0;
-  padding: 0 0 24px 0;
+  padding: 0 0 24px;
   border: none;
 
   &:not(:last-child)::after {
@@ -187,7 +187,7 @@
   }
 
   @media (min-width: $tablet-width) {
-    padding: 0 0 48px 0;
+    padding: 0 0 48px;
 
     &::before {
       content: "";
@@ -205,7 +205,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    padding: 0 0 73px 0;
+    padding: 0 0 73px;
 
     &::before {
       top: -60px;
@@ -228,18 +228,18 @@
 
   &--attractions {
     @media (min-width: $tablet-width) {
-      padding: 0 0 42px 0;
+      padding: 0 0 42px;
     }
 
     @media (min-width: $desktop-width) {
-      padding: 0 0 72px 0;
+      padding: 0 0 72px;
     }
   }
 }
 
 .review-form__list-wrapper-title {
-  margin: 0 0 20px 0;
-  padding: 24px 0 0 0;
+  margin: 0 0 20px;
+  padding: 24px 0 0;
   text-align: center;
   font-size: 18px;
   font-weight: 700;
@@ -250,14 +250,14 @@
   @media (min-width: $tablet-width) {
     max-width: 402px;
     background-color: #ffffff;
-    margin: 0 auto 28px auto;
+    margin: 0 auto 28px;
     padding: 0;
     font-size: 21px;
     z-index: 1;
   }
 
   @media (min-width: $desktop-width) {
-    margin: 0 auto 46px auto;
+    margin: 0 auto 46px;
   }
 }
 
@@ -308,7 +308,7 @@
 
 .review-form__describe-emotions-title {
   @media (min-width: $desktop-width) {
-    margin: 0 auto 29px auto;
+    margin: 0 auto 29px;
   }
 }
 

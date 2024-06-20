@@ -3,31 +3,31 @@
 
 .video-presentation {
   @include flex(column);
-  padding: 17px 20px 0 20px;
+  padding: 17px 20px 0;
 
   @media (min-width: $tablet-width) {
-    padding: 54px 60px 40px 60px;
+    padding: 54px 60px 40px;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 60px 0 84px 0;
+    padding: 60px 0 84px;
   }
 }
 
 .video-presentation__heading {
-  padding: 0 20px 38px 20px;
+  padding: 0 20px 38px;
 
   @media (min-width: $tablet-width) {
-    padding: 0 100px 89px 100px;
+    padding: 0 100px 89px;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 0 378px 86px 378px;
+    padding: 0 378px 86px;
   }
 }
 
 .video-presentation__title {
-  margin: 0 0 28px 0;
+  margin: 0 0 28px;
   text-align: center;
   font-size: 18px;
   font-weight: 700;
@@ -36,7 +36,7 @@
   color: $secondary-color;
 
   @media (min-width: $tablet-width) {
-    margin: 0 0 33px 0;
+    margin: 0 0 33px;
     font-size: 30px;
   }
 }

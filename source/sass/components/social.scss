@@ -28,19 +28,19 @@
   }
 
   &--vkontakte::before {
-      mask-image: url("../images/sprite.svg#vk");
+    mask-image: url("../images/sprite.svg#vk");
   }
 
   &--telegram::before {
-      mask-image: url("../images/sprite.svg#telegram");
+    mask-image: url("../images/sprite.svg#telegram");
   }
 
   &--youtube::before {
-      mask-image: url("../images/sprite.svg#youtube");
+    mask-image: url("../images/sprite.svg#youtube");
   }
 
-  &--github::before{
-      mask-image: url("../images/sprite.svg#github");
+  &--github::before {
+    mask-image: url("../images/sprite.svg#github");
   }
 
   &:hover {

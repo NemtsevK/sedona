@@ -4,7 +4,7 @@
 .inner-list {
   @include flex(column);
   gap: 25px;
-  padding: 23px 18px 46px 18px;
+  padding: 23px 18px 46px;
   background-color: #ffffff;
 
   @media (min-width: $tablet-width) {
@@ -115,17 +115,17 @@
 }
 
 .inner-list__title {
-  padding: 8px 0 0 0;
+  padding: 8px 0 0;
   font-size: 18px;
   font-weight: 700;
   line-height: 26px;
   text-align: start;
-  margin: 0 0 16px 0;
+  margin: 0 0 16px;
   text-transform: uppercase;
   color: $secondary-color;
 
   @media (min-width: $tablet-width) {
-    margin: 94px 0 25px 0;
+    margin: 94px 0 25px;
     padding: 0;
     text-align: center;
     font-size: 21px;
@@ -153,11 +153,11 @@
 
   &--food {
     @media (min-width: $tablet-width) {
-      margin: 0 0 2px 0;
+      margin: 0 0 2px;
     }
 
     @media (min-width: $desktop-width) {
-      margin: 0 0 4px 0;
+      margin: 0 0 4px;
     }
   }
 

@@ -6,14 +6,14 @@
   background-repeat: no-repeat;
   background-position: bottom, center;
   background-size: 100% 57px, cover;
-  padding: 90px 19px 85px 19px;
+  padding: 90px 19px 85px;
 
   @media (min-resolution: 2dppx) {
     background-image: url("../images/decorative/hero-divider-mobile.svg"), url("../images/content/hero-background@2x.jpg");
   }
 
   @media (min-width: $tablet-width) {
-    padding: 78px 19px 90px 19px;
+    padding: 78px 19px 90px;
     background-image: url("../images/decorative/hero-divider-tablet.svg"), url("../images/content/hero-background-tablet.jpg");
 
     @media (min-resolution: 2dppx) {
