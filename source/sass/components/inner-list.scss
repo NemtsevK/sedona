@@ -3,11 +3,12 @@
 
 .inner-list {
   @include flex(column);
+
   gap: 25px;
   padding: 23px 18px 46px;
   background-color: #ffffff;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0;
@@ -19,13 +20,14 @@
   position: relative;
   padding: 0 0 0 47px;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     @include flex(column, flex-end);
+
     min-height: 331px;
     padding: 60px 33px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 69px 50px;
   }
 
@@ -41,7 +43,7 @@
       background-repeat: no-repeat;
       background-size: contain;
 
-      @media (min-width: $tablet-width) {
+      @media (width >= $tablet-width) {
         width: 77px;
         height: 77px;
         top: 58px;
@@ -49,7 +51,7 @@
         transform: translateX(-50%);
       }
 
-      @media (min-width: $desktop-width) {
+      @media (width >= $desktop-width) {
         top: 68px;
       }
     }
@@ -67,7 +69,7 @@
       background-repeat: no-repeat;
       background-size: contain;
 
-      @media (min-width: $tablet-width) {
+      @media (width >= $tablet-width) {
         width: 81px;
         height: 78px;
         top: 57px;
@@ -75,7 +77,7 @@
         transform: translateX(-50%);
       }
 
-      @media (min-width: $desktop-width) {
+      @media (width >= $desktop-width) {
         width: 75px;
         height: 75px;
         top: 69px;
@@ -95,7 +97,7 @@
       background-repeat: no-repeat;
       background-size: contain;
 
-      @media (min-width: $tablet-width) {
+      @media (width >= $tablet-width) {
         width: 82px;
         height: 82px;
         top: 60px;
@@ -103,7 +105,7 @@
         transform: translateX(-50%);
       }
 
-      @media (min-width: $desktop-width) {
+      @media (width >= $desktop-width) {
         width: 78px;
         height: 76px;
         top: 69px;
@@ -124,7 +126,7 @@
   text-transform: uppercase;
   color: $secondary-color;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 94px 0 25px;
     padding: 0;
     text-align: center;
@@ -142,32 +144,32 @@
   color: $additional-color;
   align-self: center;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     max-width: 190px;
     text-align: center;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     max-width: 300px;
   }
 
   &--food {
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       margin: 0 0 2px;
     }
 
-    @media (min-width: $desktop-width) {
+    @media (width >= $desktop-width) {
       margin: 0 0 4px;
     }
   }
 
   &--souvenir {
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       margin: 0 0 4px -4px;
       max-width: 180px;
     }
 
-    @media (min-width: $desktop-width) {
+    @media (width >= $desktop-width) {
       margin: 0;
       max-width: 215px;
     }
@@ -176,7 +178,7 @@
   .inner-list__break {
     display: none;
 
-    @media (min-width: $desktop-width) {
+    @media (width >= $desktop-width) {
       display: block;
     }
   }

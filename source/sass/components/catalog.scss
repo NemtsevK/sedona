@@ -4,27 +4,28 @@
 .catalog {
   padding: 37px 20px 0;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     padding: 66px 60px 0;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 98px 0 0;
   }
 }
 
 .catalog__heading {
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     padding: 0 105px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 0 380px 89px;
   }
 }
 
 .catalog__list {
   @include flex(column, normal, center);
+
   position: relative;
 
   &::before {
@@ -35,7 +36,7 @@
     top: 0;
     background-color: #e5e5e5;
 
-    @media (min-width: 600px) {
+    @media (width >= 600px) {
       content: none;
     }
   }
@@ -48,17 +49,17 @@
     bottom: 0;
     background-color: #e5e5e5;
 
-    @media (min-width: 600px) {
+    @media (width >= 600px) {
       content: none;
     }
   }
 
-  @media (min-width: 600px) {
+  @media (width >= 600px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
@@ -72,7 +73,7 @@
   text-transform: uppercase;
   color: $secondary-color;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 0 0 32px;
     font-size: 30px;
   }
@@ -86,11 +87,11 @@
   text-transform: uppercase;
   color: $additional-color;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 0 0 80px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     margin: 0;
   }
 }
@@ -109,12 +110,12 @@
     transform: translateX(-50%);
     background-color: #e5e5e5;
 
-    @media (min-width: 600px) {
+    @media (width >= 600px) {
       content: none;
     }
   }
 
-  @media (min-width: 600px) {
+  @media (width >= 600px) {
     padding: 0;
 
     &:first-child {
@@ -124,13 +125,13 @@
     &:nth-child(2n+3) .catalog__item-caption {
       background-color: #eaeaea;
 
-      @media (min-width: $desktop-width) {
-        background-color: rgba(0, 0, 0, 0.3);
+      @media (width >= $desktop-width) {
+        background-color: rgba(0, 0, 0, 30%);
       }
     }
   }
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     position: static;
   }
 }
@@ -138,44 +139,47 @@
 .catalog__item-wrapper {
   margin: 0;
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     position: relative;
   }
 }
 
 .catalog__item-caption {
   @include flex(column);
+
   padding: 15px 0 25px;
 
-  @media (min-width: 600px) {
+  @media (width >= 600px) {
     background-color: #f2f2f2;
     padding: 22px 20px 15px;
   }
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     @include flex(row, space-between);
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     position: absolute;
     width: 100%;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 30%);
   }
 
   &--modified {
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       .catalog__description {
         @include flex(column);
+
         gap: 2px;
       }
     }
 
-    @media (min-width: $desktop-width) {
+    @media (width >= $desktop-width) {
       padding: 17px 20px 17px 25px;
 
       .catalog__description {
         @include flex(column);
+
         gap: 4px;
       }
     }
@@ -195,11 +199,11 @@
   text-transform: uppercase;
   color: $secondary-color;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 0;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     color: #ffffff;
   }
 }
@@ -211,7 +215,7 @@
   text-transform: none;
   color: $additional-color;
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     color: #ffffff;
   }
 }
@@ -242,17 +246,17 @@
     opacity: 0.3;
     background-repeat: no-repeat;
 
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       top: -4px;
     }
   }
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     align-self: center;
     padding: 0 0 0 32px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     color: #ffffff;
 
     &::before {

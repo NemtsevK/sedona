@@ -40,7 +40,7 @@
     bottom: 0;
   }
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     display: none;
   }
 
@@ -80,7 +80,7 @@
     transform: rotate(-45deg) translate(0, -50%);
   }
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     display: none;
   }
 }
@@ -91,7 +91,7 @@
   background-color: #ffffff;
   transform: rotate(45deg) translate(0, 50%);
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     display: none;
   }
 }
@@ -102,26 +102,27 @@
 
 .nav__list {
   @include flex(column);
+
   flex-wrap: wrap;
   background-color: $main-color;
   z-index: 1;
   text-align: center;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     padding: 0 8px;
     display: grid;
     grid-template-columns: 1fr 1fr 185px 1fr 1fr;
     background-color: initial;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 0;
     grid-template-columns: 1fr 1fr 240px 1fr 1fr;
   }
 }
 
 .nav--opened .nav__list-wrapper {
-  @media (max-width: 767px) {
+  @media (width < $tablet-width) {
     position: absolute;
     width: 100%;
     top: 0;
@@ -130,7 +131,7 @@
 }
 
 .nav--closed .nav__list-wrapper {
-  @media (max-width: 767px) {
+  @media (width < $tablet-width) {
     display: none;
   }
 }
@@ -138,7 +139,7 @@
 .nav--no-js.nav {
   width: 100%;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     width: initial;
     margin: initial;
   }

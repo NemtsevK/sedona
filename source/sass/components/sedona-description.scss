@@ -3,11 +3,11 @@
 .sedona-description {
   padding: 33px 18px 16px;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     padding: 48px 124px 54px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 59px 358px 44px;
   }
 }
@@ -21,7 +21,7 @@
   text-transform: uppercase;
   color: $secondary-color;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 0 0 30px;
     font-size: 21px;
   }

@@ -3,13 +3,14 @@
 
 .copyright {
   @include flex(row, normal, center);
+
   position: relative;
   margin: 0 auto;
   max-width: 129px;
   min-height: 35px;
   padding: 0 41px 0 0;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     place-self: center end;
     margin: 0;
   }

@@ -14,23 +14,23 @@
     left: 0;
     background-color: #e5e5e5;
 
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       content: none;
     }
   }
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     position: static;
     padding: 0 60px 77px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 0 120px 77px;
   }
 }
 
 .review-form__contact-wrapper {
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -48,7 +48,7 @@
     }
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     gap: 99px;
     margin: 0 0 71px;
   }
@@ -70,12 +70,12 @@
     transform: translateX(-50%);
     background-color: #e5e5e5;
 
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       content: none;
     }
   }
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     position: static;
     padding: 0;
   }
@@ -90,7 +90,7 @@
   line-height: 26px;
   text-transform: uppercase;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 0 0 27px;
     font-size: 21px;
   }
@@ -98,6 +98,7 @@
 
 .review-form__introduce-list {
   @include flex(column);
+
   gap: 15px;
 }
 
@@ -137,12 +138,12 @@
     transform: translateX(-50%);
     background-color: #e5e5e5;
 
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       content: none;
     }
   }
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     position: static;
     padding: 0;
   }
@@ -158,7 +159,7 @@
   text-transform: uppercase;
   color: $secondary-color;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 0 0 27px;
     font-size: 21px;
     padding: 0;
@@ -181,12 +182,12 @@
     transform: translateX(-50%);
     background-color: #e5e5e5;
 
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       content: none;
     }
   }
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     padding: 0 0 48px;
 
     &::before {
@@ -198,13 +199,13 @@
       left: 0;
       background: linear-gradient(to right, #d8d8d8 19%, transparent 19%, transparent 81%, #d8d8d8 81%, #d8d8d8 100%);
 
-      @media (min-width: $desktop-width) {
+      @media (width >= $desktop-width) {
         background: linear-gradient(to right, #d8d8d8 29%, transparent 29%, transparent 71%, #d8d8d8 71%, #d8d8d8 100%);
       }
     }
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 0 0 73px;
 
     &::before {
@@ -215,23 +216,23 @@
   &:nth-child(3)::before {
     top: -55px;
 
-    @media (min-width: $desktop-width) {
+    @media (width >= $desktop-width) {
       top: -73px;
     }
   }
 
   &:nth-child(4)::before {
-    @media (min-width: $desktop-width) {
+    @media (width >= $desktop-width) {
       top: -42px;
     }
   }
 
   &--attractions {
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       padding: 0 0 42px;
     }
 
-    @media (min-width: $desktop-width) {
+    @media (width >= $desktop-width) {
       padding: 0 0 72px;
     }
   }
@@ -247,7 +248,7 @@
   text-transform: uppercase;
   color: $secondary-color;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     max-width: 402px;
     background-color: #ffffff;
     margin: 0 auto 28px;
@@ -256,24 +257,25 @@
     z-index: 1;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     margin: 0 auto 46px;
   }
 }
 
 .review-form__radio-list {
   @include flex(column);
+
   flex-wrap: wrap;
   gap: 16px;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 0 auto;
     flex-direction: row;
     max-width: 576px;
     gap: 16px 18px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding-left: 28px;
     justify-content: center;
     gap: 34px;
@@ -283,17 +285,18 @@
 
 .review-form__checkbox-list {
   @include flex(column);
+
   flex-wrap: wrap;
   gap: 16px;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     display: grid;
     grid-template-columns: 224px 224px;
     justify-content: center;
     gap: 16px 32px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     display: grid;
     grid-template-columns: 172px 170px 153px 184px;
     justify-content: center;
@@ -307,7 +310,7 @@
 }
 
 .review-form__describe-emotions-title {
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     margin: 0 auto 29px;
   }
 }
@@ -324,12 +327,12 @@
   line-height: 26px;
   text-transform: uppercase;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     max-width: 324px;
     margin: 0;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     max-width: 384px;
     margin-left: 96px;
   }
@@ -338,20 +341,20 @@
 .review-form__text-required-fields {
   margin-top: 3px;
   display: block;
-  color: rgba(51, 51, 51, 0.6);
+  color: rgba(51, 51, 51, 60%);
   text-align: right;
   font-size: 12px;
   font-weight: 400;
   line-height: 21px;
   text-transform: uppercase;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     max-width: 192px;
     font-size: 14px;
     margin: -35px 0 0 456px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     margin: -34px 96px 0 672px;
   }
 }

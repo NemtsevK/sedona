@@ -3,11 +3,11 @@
 .search-hotels {
   padding: 40px 18px 48px;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     padding: 60px 155px 55px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 60px 155px 68px;
   }
 }
@@ -21,7 +21,7 @@
   text-transform: uppercase;
   color: $secondary-color;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 0 0 33px;
     font-size: 30px;
   }
@@ -36,7 +36,7 @@
   color: $additional-color;
   text-align: center;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 0 auto 44px;
     max-width: 435px;
   }
@@ -52,7 +52,7 @@
   text-transform: uppercase;
   text-decoration: none;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     max-width: 458px;
     margin: 0 auto;
   }

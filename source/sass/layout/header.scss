@@ -3,10 +3,11 @@
 
 .header__wrapper {
   @include flex(row, flex-end, center);
+
   flex-wrap: wrap;
   min-height: 56px;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     display: block;
   }
 }
@@ -20,7 +21,7 @@
   left: 50%;
   transform: translateX(-50%);
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     z-index: 2;
   }
 

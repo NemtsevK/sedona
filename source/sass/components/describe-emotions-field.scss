@@ -10,12 +10,12 @@
   line-height: 26px;
   color: $secondary-color;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     max-height: 160px;
     margin: 0 0 44px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     display: block;
     max-width: 768px;
     margin: 0 auto 47px;

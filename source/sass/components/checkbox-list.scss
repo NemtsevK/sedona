@@ -9,13 +9,14 @@
   line-height: 26px;
   color: $secondary-color;
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 10px 0 10px 62px;
   }
 }
 
 .checkbox-list__control {
   @include flex(row);
+
   position: relative;
   cursor: pointer;
 }

@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     justify-content: space-around;
     background-color: #eeeeee;
   }
@@ -13,28 +13,29 @@
 
 .advantages-list__item {
   @include flex(column);
+
   width: 100%;
   background-color: $main-color;
 
   &:nth-child(3) {
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       display: grid;
       grid-template-columns: 1fr 33.33%;
     }
 
-    @media (min-width: $desktop-width) {
+    @media (width >= $desktop-width) {
       display: grid;
       grid-template-columns: 1fr 400px;
     }
   }
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     display: grid;
     grid-template-columns: 33.33% 1fr;
     width: 100%;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     display: grid;
     grid-template-columns: 400px 1fr;
     width: 100%;
@@ -53,12 +54,12 @@
       height: 1px;
       background-color: #d6d6d6;
 
-      @media (min-width: $tablet-width) {
+      @media (width >= $tablet-width) {
         content: none;
       }
     }
 
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       display: inline;
       position: static;
       grid-template-columns: auto;
@@ -66,7 +67,7 @@
       padding: 41px 33px 43px;
     }
 
-    @media (min-width: $desktop-width) {
+    @media (width >= $desktop-width) {
       display: grid;
       max-width: 400px;
       padding: 52px 50px;
@@ -83,12 +84,12 @@
   .advantages-list__title {
     padding: 18px 0 0;
 
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       padding: 0;
     }
   }
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     background-image: none;
   }
 }
@@ -96,25 +97,26 @@
 .advantages-list__item:nth-child(3) .advantages-list__item-wrapper {
   padding: 37px 18px;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     padding: 52px 33px 31px;
     order: 2;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 52px 50px 51px;
   }
 }
 
 .advantages-list__item-wrapper {
   @include flex(column, center, center);
+
   padding: 54px 18px 40px;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     padding: 52px 33px 31px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 52px 50px 51px;
   }
 }
@@ -132,7 +134,7 @@
   text-transform: uppercase;
   color: #ffffff;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     max-width: 155px;
     margin: 0 auto 14px;
     font-size: 21px;
@@ -152,7 +154,7 @@
   text-transform: uppercase;
   color: #ffffff;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 0 auto 22px;
   }
 
@@ -187,7 +189,7 @@
   color: #ffffff;
 
   &--devil-bridge {
-    @media (min-width: $desktop-width) {
+    @media (width >= $desktop-width) {
       max-width: 230px;
     }
   }
@@ -196,7 +198,7 @@
     max-width: 250px;
     margin: 0 auto;
 
-    @media (min-width: $tablet-width) {
+    @media (width >= $tablet-width) {
       max-width: none;
       margin: 0;
     }
@@ -204,13 +206,13 @@
 }
 
 .advantages-list__square-break {
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     display: none;
   }
 }
 
 .advantages-list__road-break {
-  @media (max-width: 767px) {
+  @media (width < $tablet-width) {
     display: none;
   }
 }

@@ -3,11 +3,11 @@
 .review-form-heading {
   padding: 36px 20px 28px;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     padding: 64px 166px 108px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 115px 382px 68px;
   }
 }
@@ -21,12 +21,12 @@
   text-transform: uppercase;
   color: $secondary-color;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     font-size: 30px;
     margin: 0 0 20px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     margin: 0 0 31px;
   }
 }

@@ -7,13 +7,13 @@
   gap: 30px;
   padding: 34px 82px;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 36px 60px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (width >= $desktop-width) {
     padding: 36px 120px;
   }
 }
@@ -27,7 +27,7 @@
   text-transform: uppercase;
   color: $secondary-color;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     text-align: start;
     align-self: center;
   }
@@ -36,7 +36,7 @@
 .footer__social-list {
   margin: 0 0 30px;
 
-  @media (min-width: $tablet-width) {
+  @media (width >= $tablet-width) {
     margin: 0 0 0 5px;
   }
 }
