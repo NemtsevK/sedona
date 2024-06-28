@@ -7,7 +7,7 @@
   flex-wrap: wrap;
   min-height: 56px;
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     display: block;
   }
 }
@@ -21,7 +21,7 @@
   left: 50%;
   transform: translateX(-50%);
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     z-index: 2;
   }
 

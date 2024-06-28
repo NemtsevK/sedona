@@ -10,7 +10,7 @@
   min-height: 35px;
   padding: 0 41px 0 0;
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     place-self: center end;
     margin: 0;
   }

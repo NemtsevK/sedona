@@ -9,7 +9,7 @@
   line-height: 26px;
   color: $secondary-color;
 
-  @media (width >= $desktop-width) {
+  @media (min-width: $desktop-width) {
     padding: 10px 0 10px 62px;
   }
 }

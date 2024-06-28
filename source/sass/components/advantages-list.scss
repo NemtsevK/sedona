@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     justify-content: space-around;
     background-color: #eeeeee;
   }
@@ -18,24 +18,24 @@
   background-color: $main-color;
 
   &:nth-child(3) {
-    @media (width >= $tablet-width) {
+    @media (min-width: $tablet-width) {
       display: grid;
       grid-template-columns: 1fr 33.33%;
     }
 
-    @media (width >= $desktop-width) {
+    @media (min-width: $desktop-width) {
       display: grid;
       grid-template-columns: 1fr 400px;
     }
   }
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     display: grid;
     grid-template-columns: 33.33% 1fr;
     width: 100%;
   }
 
-  @media (width >= $desktop-width) {
+  @media (min-width: $desktop-width) {
     display: grid;
     grid-template-columns: 400px 1fr;
     width: 100%;
@@ -54,12 +54,12 @@
       height: 1px;
       background-color: #d6d6d6;
 
-      @media (width >= $tablet-width) {
+      @media (min-width: $tablet-width) {
         content: none;
       }
     }
 
-    @media (width >= $tablet-width) {
+    @media (min-width: $tablet-width) {
       display: inline;
       position: static;
       grid-template-columns: auto;
@@ -67,7 +67,7 @@
       padding: 41px 33px 43px;
     }
 
-    @media (width >= $desktop-width) {
+    @media (min-width: $desktop-width) {
       display: grid;
       max-width: 400px;
       padding: 52px 50px;
@@ -84,12 +84,12 @@
   .advantages-list__title {
     padding: 18px 0 0;
 
-    @media (width >= $tablet-width) {
+    @media (min-width: $tablet-width) {
       padding: 0;
     }
   }
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     background-image: none;
   }
 }
@@ -97,12 +97,12 @@
 .advantages-list__item:nth-child(3) .advantages-list__item-wrapper {
   padding: 37px 18px;
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     padding: 52px 33px 31px;
     order: 2;
   }
 
-  @media (width >= $desktop-width) {
+  @media (min-width: $desktop-width) {
     padding: 52px 50px 51px;
   }
 }
@@ -112,11 +112,11 @@
 
   padding: 54px 18px 40px;
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     padding: 52px 33px 31px;
   }
 
-  @media (width >= $desktop-width) {
+  @media (min-width: $desktop-width) {
     padding: 52px 50px 51px;
   }
 }
@@ -134,7 +134,7 @@
   text-transform: uppercase;
   color: #ffffff;
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     max-width: 155px;
     margin: 0 auto 14px;
     font-size: 21px;
@@ -154,7 +154,7 @@
   text-transform: uppercase;
   color: #ffffff;
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     margin: 0 auto 22px;
   }
 
@@ -189,7 +189,7 @@
   color: #ffffff;
 
   &--devil-bridge {
-    @media (width >= $desktop-width) {
+    @media (min-width: $desktop-width) {
       max-width: 230px;
     }
   }
@@ -198,7 +198,7 @@
     max-width: 250px;
     margin: 0 auto;
 
-    @media (width >= $tablet-width) {
+    @media (min-width: $tablet-width) {
       max-width: none;
       margin: 0;
     }
@@ -206,13 +206,13 @@
 }
 
 .advantages-list__square-break {
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     display: none;
   }
 }
 
 .advantages-list__road-break {
-  @media (width < $tablet-width) {
+  @media (max-width: $tablet-width - 1px) {
     display: none;
   }
 }

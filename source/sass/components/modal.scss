@@ -35,7 +35,7 @@
   margin: auto;
   box-shadow: none;
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     width: 400px;
     padding: 50px 47px;
   }
@@ -49,21 +49,21 @@
   box-shadow: none;
   background: linear-gradient(to bottom, #ffffff 70%, #f2f2f2 70%);
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     width: 640px;
     padding: 53px 91px 47px;
     background: linear-gradient(to bottom, #ffffff 58%, #f2f2f2 58%);
   }
 
   .modal__title {
-    @media (width >= $tablet-width) {
+    @media (min-width: $tablet-width) {
       margin: 0 0 28px;
       line-height: 26px;
     }
   }
 
   .modal__close-button {
-    @media (width >= $tablet-width) {
+    @media (min-width: $tablet-width) {
       width: 100%;
     }
   }
@@ -78,7 +78,7 @@
   text-transform: uppercase;
   color: $secondary-color;
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     font-size: 30px;
     line-height: 40px;
   }
@@ -93,7 +93,7 @@
   text-transform: uppercase;
   color: $additional-color;
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     margin: 0 0 47px;
   }
 
@@ -101,7 +101,7 @@
     max-width: 244px;
     margin: 0 auto 69px;
 
-    @media (width >= $tablet-width) {
+    @media (min-width: $tablet-width) {
       max-width: 444px;
       margin: 0 auto 95px;
     }
@@ -122,7 +122,7 @@
   text-transform: uppercase;
   color: #ffffff;
 
-  @media (width >= $tablet-width) {
+  @media (min-width: $tablet-width) {
     min-width: 272px;
     font-size: 21px;
   }
